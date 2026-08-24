@@ -1,0 +1,180 @@
+<section class="final-section">
+  <div class="final-section__container">
+    <div class="final-section__photo">
+      <div class="final-section__photo-frame">
+        <img
+          src="/public/images/wedding/anais-et-glen.png"
+          alt="Anaïs et Glen"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <div class="final-section__content">
+      <p class="final-section__eyebrow">Et bientôt,</p>
+
+      <h2 class="final-section__title">
+        <span class="is-green">pour</span>
+        <span class="is-coral">toujours...</span>
+      </h2>
+
+      <div class="final-section__divider" aria-hidden="true">
+        <span></span>
+        <i>♡</i>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .final-section {
+    position: relative;
+    padding: 48px 0 110px;
+    background: var(--color-cream, #f8f5ef);
+  }
+
+  .final-section__container {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(320px, 500px) 1fr;
+    align-items: center;
+    gap: 72px;
+  }
+
+  .final-section__photo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .final-section__photo-frame {
+    width: min(100%, 500px);
+    aspect-ratio: 0.83 / 1;
+    overflow: hidden;
+    border-radius: 260px 260px 28px 28px;
+    border: 1px solid rgba(208, 191, 163, 0.7);
+    background: #ece7df;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+  }
+
+  .final-section__photo-frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .final-section__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .final-section__eyebrow {
+    margin: 0 0 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.2rem, 4vw, 4.2rem);
+    line-height: 1;
+    color: var(--color-green, #5f7d69);
+  }
+
+  .final-section__title {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: "Allura", "Cormorant Garamond", serif;
+    font-weight: 400;
+    line-height: 0.95;
+    font-size: clamp(3.6rem, 7vw, 7rem);
+  }
+
+  .final-section__title .is-green {
+    color: var(--color-coral, #d98a73);
+  }
+
+  .final-section__title .is-coral {
+    color: var(--color-coral, #d98a73);
+  }
+
+  .final-section__divider {
+    margin-top: 34px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .final-section__divider span {
+    width: 110px;
+    height: 1px;
+    background: rgba(208, 191, 163, 0.8);
+    display: block;
+  }
+
+  .final-section__divider i {
+    font-style: normal;
+    color: var(--color-coral, #d98a73);
+    font-size: 0.95rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 980px) {
+    .final-section {
+      padding: 36px 0 90px;
+    }
+
+    .final-section__container {
+      width: min(760px, calc(100% - 32px));
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .final-section__photo {
+      order: 2;
+    }
+
+    .final-section__content {
+      order: 1;
+      align-items: center;
+      text-align: center;
+    }
+
+    .final-section__photo-frame {
+      width: min(100%, 520px);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .final-section {
+      padding: 28px 0 72px;
+    }
+
+    .final-section__container {
+      width: calc(100% - 24px);
+      gap: 28px;
+    }
+
+    .final-section__eyebrow {
+      font-size: clamp(1.9rem, 7vw, 2.8rem);
+    }
+
+    .final-section__title {
+      font-size: clamp(3rem, 13vw, 4.8rem);
+    }
+
+    .final-section__divider {
+      margin-top: 24px;
+      gap: 12px;
+    }
+
+    .final-section__divider span {
+      width: 72px;
+    }
+
+    .final-section__photo-frame {
+      border-radius: 220px 220px 22px 22px;
+    }
+  }
+</style>

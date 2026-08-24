@@ -1,0 +1,598 @@
+<section id="dresscode" class="dress">
+  <div class="dress__inner">
+    <header class="dress__heading">
+      <p class="dress__script">Et pour la tenue ?</p>
+
+      <h2>
+        Une palette douce.
+        <span>À chacun son style.</span>
+      </h2>
+
+      <p class="dress__intro">
+        Si le cœur vous en dit, laissez-vous inspirer par notre palette de
+        couleurs naturelles, chaleureuses et légèrement tropicales.
+      </p>
+
+      <div class="dress__palette" aria-label="Palette du mariage">
+        <div class="dress__color">
+          <span style="--swatch:#A8BFA3;"></span>
+          <small>Sauge</small>
+        </div>
+
+        <div class="dress__color">
+          <span style="--swatch:#6E8B6B;"></span>
+          <small>Olive</small>
+        </div>
+
+        <div class="dress__color">
+          <span style="--swatch:#C97C5D;"></span>
+          <small>Terracotta</small>
+        </div>
+
+        <div class="dress__color">
+          <span style="--swatch:#E8D8C3;"></span>
+          <small>Champagne</small>
+        </div>
+
+        <div class="dress__color">
+          <span style="--swatch:#D6C2A1;"></span>
+          <small>Sable</small>
+        </div>
+      </div>
+
+      <p class="dress__white">Le blanc reste réservé à la mariée ♡</p>
+    </header>
+
+    <!-- ===================================
+         POUR ELLES
+         =================================== -->
+
+    <div class="dress__group">
+      <div class="dress__group-heading">
+        <span>Pour elles</span>
+        <i></i>
+      </div>
+
+      <div class="dress__gallery">
+        <figure class="dress-look">
+          <div class="dress-look__image">
+            <img
+              src="/images/dress-code/femme-1-sauge-brodee.png"
+              alt="Robe vert sauge brodée"
+            />
+          </div>
+
+          <figcaption>
+            Vert sauge
+            <span>Brodé</span>
+          </figcaption>
+        </figure>
+
+        <figure class="dress-look">
+          <div class="dress-look__image">
+            <img
+              src="/images/dress-code/femme-2-sauge-drapee.png"
+              alt="Tenue vert sauge drapée"
+            />
+          </div>
+
+          <figcaption>
+            Vert sauge
+            <span>Drapé</span>
+          </figcaption>
+        </figure>
+
+        <figure class="dress-look">
+          <div class="dress-look__image">
+            <img
+              src="/images/dress-code/femme-3-terracotta.png"
+              alt="Robe terracotta"
+            />
+          </div>
+
+          <figcaption>
+            Terracotta
+            <span>Chaleureux</span>
+          </figcaption>
+        </figure>
+
+        <figure class="dress-look">
+          <div class="dress-look__image">
+            <img
+              src="/images/dress-code/femme-4-champagne-pailletee.png"
+              alt="Robe champagne pailletée"
+            />
+          </div>
+
+          <figcaption>
+            Champagne
+            <span>Lumineux</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- ===================================
+         POUR EUX
+         =================================== -->
+
+    <div class="dress__group dress__group--men">
+      <div class="dress__group-heading">
+        <span>Pour eux</span>
+        <i></i>
+      </div>
+
+      <div class="dress__gallery">
+        <figure class="dress-look">
+          <div class="dress-look__image">
+            <img
+              src="/images/dress-code/homme-1-sauge-clair.png"
+              alt="Costume vert sauge clair"
+            />
+          </div>
+
+          <figcaption>
+            Sauge clair
+            <span>Naturel</span>
+          </figcaption>
+        </figure>
+
+        <figure class="dress-look">
+          <div class="dress-look__image">
+            <img
+              src="/images/dress-code/homme-2-vert-profond.png"
+              alt="Costume vert profond"
+            />
+          </div>
+
+          <figcaption>
+            Vert profond
+            <span>Élégant</span>
+          </figcaption>
+        </figure>
+
+        <figure class="dress-look">
+          <div class="dress-look__image">
+            <img
+              src="/images/dress-code/homme-3-beige.png"
+              alt="Costume beige"
+            />
+          </div>
+
+          <figcaption>
+            Beige
+            <span>Chaleureux</span>
+          </figcaption>
+        </figure>
+
+        <figure class="dress-look">
+          <div class="dress-look__image">
+            <img
+              src="/images/dress-code/homme-4-lin-clair.png"
+              alt="Costume en lin clair"
+            />
+          </div>
+
+          <figcaption>
+            Lin clair
+            <span>Estival</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <p class="dress__ending">
+      Une seule règle :
+      <span>vous sentir bien et profiter.</span>
+    </p>
+  </div>
+</section>
+
+<style>
+  /* ========================================
+     SECTION
+     ======================================== */
+
+  .dress {
+    position: relative;
+
+    padding: clamp(6rem, 10vw, 9rem) 0;
+
+    overflow: hidden;
+
+    background: var(--ivory-light);
+  }
+
+  .dress::before {
+    content: "";
+
+    position: absolute;
+
+    top: 70px;
+    left: -140px;
+
+    width: 380px;
+    height: 380px;
+
+    border: 1px solid rgba(191, 154, 89, 0.16);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+  }
+
+  .dress__inner {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(calc(100% - 3rem), var(--container));
+
+    margin-inline: auto;
+  }
+
+  /* ========================================
+     HEADING
+     ======================================== */
+
+  .dress__heading {
+    max-width: 760px;
+
+    margin: 0 auto clamp(3.5rem, 6vw, 5rem);
+
+    text-align: center;
+  }
+
+  .dress__script {
+    margin: 0 0 0.5rem;
+
+    color: var(--terracotta);
+
+    font-family: var(--font-script);
+
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+  }
+
+  .dress__heading h2 {
+    margin: 0;
+
+    color: var(--green-deep);
+
+    font-family: var(--font-serif);
+
+    font-size: clamp(3.5rem, 6vw, 5.8rem);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+  }
+
+  .dress__heading h2 span {
+    display: block;
+
+    color: var(--terracotta);
+
+    font-style: italic;
+  }
+
+  .dress__intro {
+    max-width: 570px;
+
+    margin: 1.8rem auto 0;
+
+    color: var(--text-soft);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+  }
+
+  /* ========================================
+     PALETTE
+     ======================================== */
+
+  .dress__palette {
+    display: flex;
+    justify-content: center;
+
+    gap: clamp(0.9rem, 2vw, 1.5rem);
+
+    margin-top: 2.3rem;
+  }
+
+  .dress__color {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0.55rem;
+  }
+
+  .dress__color > span {
+    width: clamp(42px, 5vw, 56px);
+
+    aspect-ratio: 1;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background: var(--swatch);
+
+    border: 4px solid var(--ivory-light);
+
+    box-shadow: 0 5px 18px rgba(76, 67, 54, 0.1);
+  }
+
+  .dress__color small {
+    color: var(--text-soft);
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+  }
+
+  .dress__white {
+    margin: 1.8rem 0 0;
+
+    color: var(--green);
+
+    font-family: var(--font-serif);
+
+    font-size: 1.15rem;
+
+    font-style: italic;
+  }
+
+  /* ========================================
+     GROUPES
+     ======================================== */
+
+  .dress__group + .dress__group {
+    margin-top: clamp(4rem, 7vw, 6rem);
+  }
+
+  .dress__group-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 1.3rem;
+
+    margin-bottom: 1.5rem;
+  }
+
+  .dress__group-heading span {
+    color: var(--green-deep);
+
+    font-family: var(--font-script);
+
+    font-size: clamp(2rem, 3vw, 2.7rem);
+
+    white-space: nowrap;
+  }
+
+  .dress__group-heading i {
+    flex: 1;
+
+    height: 1px;
+
+    background: linear-gradient(to right, rgba(191, 154, 89, 0.5), transparent);
+  }
+
+  /* ========================================
+     GALERIE
+     ======================================== */
+
+  .dress__gallery {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: clamp(1rem, 2.5vw, 2rem);
+  }
+
+  .dress-look {
+    margin: 0;
+
+    text-align: center;
+  }
+
+  .dress-look:nth-child(even) {
+    margin-top: 2.5rem;
+  }
+
+  /* ========================================
+     IMAGES
+     ======================================== */
+
+  .dress-look__image {
+    position: relative;
+
+    padding: 7px;
+
+    overflow: hidden;
+
+    background: var(--ivory-light);
+
+    border: 1px solid rgba(191, 154, 89, 0.34);
+
+    border-radius: 10rem 10rem 1.4rem 1.4rem;
+
+    box-shadow: 0 16px 42px rgba(72, 66, 57, 0.06);
+  }
+
+  .dress-look__image img {
+    width: 100%;
+
+    aspect-ratio: 0.68;
+
+    object-fit: cover;
+
+    border-radius: 9rem 9rem 1rem 1rem;
+
+    transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .dress-look:hover img {
+    transform: scale(1.025);
+  }
+
+  /* ========================================
+     LIBELLÉS
+     ======================================== */
+
+  .dress-look figcaption {
+    min-height: 3.6rem;
+
+    margin-top: 1.1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: var(--green-deep);
+
+    font-family: var(--font-serif);
+
+    font-size: clamp(1.3rem, 2vw, 1.65rem);
+
+    line-height: 1.1;
+  }
+
+  .dress-look figcaption span {
+    display: block;
+
+    margin-top: 0.35rem;
+
+    color: var(--terracotta);
+
+    font-family: var(--font-body);
+
+    font-size: 0.55rem;
+    font-weight: 500;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+  }
+
+  /* ========================================
+     PHRASE FINALE
+     ======================================== */
+
+  .dress__ending {
+    margin: clamp(3.8rem, 6vw, 5.5rem) auto 0;
+
+    text-align: center;
+
+    color: var(--text-soft);
+
+    font-family: var(--font-serif);
+
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+  }
+
+  .dress__ending span {
+    display: block;
+
+    margin-top: 0.15rem;
+
+    color: var(--terracotta);
+
+    font-family: var(--font-script);
+
+    font-size: 1.7em;
+  }
+
+  /* ========================================
+     TABLETTE
+     ======================================== */
+
+  @media (max-width: 950px) {
+    .dress__gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      max-width: 700px;
+
+      margin-inline: auto;
+    }
+  }
+
+  /* ========================================
+     MOBILE
+     ======================================== */
+
+  @media (max-width: 600px) {
+    .dress {
+      padding: 5rem 0;
+    }
+
+    .dress__inner {
+      width: calc(100% - 2rem);
+    }
+
+    .dress__heading {
+      margin-bottom: 3.3rem;
+    }
+
+    .dress__heading h2 {
+      font-size: clamp(3.1rem, 14vw, 4.1rem);
+    }
+
+    .dress__palette {
+      gap: 0.7rem;
+    }
+
+    .dress__color small {
+      display: none;
+    }
+
+    .dress__gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 1rem 0.8rem;
+    }
+
+    .dress-look:nth-child(even) {
+      margin-top: 1.8rem;
+    }
+
+    .dress-look__image {
+      padding: 4px;
+
+      border-radius: 8rem 8rem 1rem 1rem;
+    }
+
+    .dress-look__image img {
+      aspect-ratio: 0.65;
+
+      border-radius: 7rem 7rem 0.75rem 0.75rem;
+    }
+
+    .dress-look figcaption {
+      min-height: 3.3rem;
+
+      margin-top: 0.8rem;
+
+      font-size: 1.15rem;
+    }
+
+    .dress-look figcaption span {
+      font-size: 0.48rem;
+    }
+
+    .dress__group-heading {
+      margin-bottom: 1.2rem;
+    }
+
+    .dress__group + .dress__group {
+      margin-top: 3.8rem;
+    }
+
+    .dress__ending {
+      margin-top: 3.5rem;
+    }
+  }
+</style>

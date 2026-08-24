@@ -1,0 +1,458 @@
+<section class="photos-teaser">
+  <div class="photos-teaser__inner">
+    <div class="photos-teaser__content">
+      <p class="photos-teaser__script">Et après le grand jour…</p>
+
+      <h2>
+        Vos souvenirs,
+        <span>nos souvenirs.</span>
+      </h2>
+
+      <div class="photos-teaser__ornament" aria-hidden="true">
+        <span></span>
+        <i>♡</i>
+        <span></span>
+      </div>
+
+      <p class="photos-teaser__text">
+        Les discours, les éclats de rire, les pas de danse un peu moins assurés
+        en fin de soirée… chacun verra cette journée à sa façon.
+      </p>
+
+      <p class="photos-teaser__text">
+        Après le mariage, vous pourrez retrouver ici les photos et vidéos de la
+        journée et partager les vôtres avec nous.
+      </p>
+
+      <a href="/photos" class="photos-teaser__button">
+        Découvrir l’espace photos
+
+        <span aria-hidden="true"> → </span>
+      </a>
+    </div>
+
+    <div class="photos-teaser__visual" aria-hidden="true">
+      <div class="photos-teaser__memory photos-teaser__memory--one">
+        <span>♡</span>
+      </div>
+
+      <div class="photos-teaser__memory photos-teaser__memory--two">
+        <span>19.06.27</span>
+      </div>
+
+      <div class="photos-teaser__memory photos-teaser__memory--three">
+        <span>A & G</span>
+      </div>
+
+      <p class="photos-teaser__handwritten">à garder précieusement</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ========================================
+     SECTION
+     ======================================== */
+
+  .photos-teaser {
+    position: relative;
+
+    padding: clamp(6rem, 10vw, 9rem) 0;
+
+    overflow: hidden;
+
+    background: var(--green-deep);
+
+    color: var(--ivory-light);
+  }
+
+  .photos-teaser::before {
+    content: "";
+
+    position: absolute;
+
+    top: -260px;
+    right: -170px;
+
+    width: 520px;
+    height: 520px;
+
+    border: 1px solid rgba(234, 220, 197, 0.11);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+  }
+
+  .photos-teaser::after {
+    content: "";
+
+    position: absolute;
+
+    left: -180px;
+    bottom: -300px;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(201, 111, 88, 0.12);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+  }
+
+  .photos-teaser__inner {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(calc(100% - 3rem), 1080px);
+
+    margin-inline: auto;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 0.95fr)
+      minmax(340px, 1.05fr);
+
+    gap: clamp(4rem, 9vw, 8rem);
+
+    align-items: center;
+  }
+
+  /* ========================================
+     CONTENT
+     ======================================== */
+
+  .photos-teaser__script {
+    margin: 0 0 0.6rem;
+
+    color: var(--coral);
+
+    font-family: var(--font-script);
+
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+  }
+
+  .photos-teaser__content h2 {
+    margin: 0;
+
+    color: var(--ivory-light);
+
+    font-family: var(--font-serif);
+
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+  }
+
+  .photos-teaser__content h2 span {
+    display: block;
+
+    color: var(--sage-light);
+
+    font-style: italic;
+  }
+
+  /* ========================================
+     ORNAMENT
+     ======================================== */
+
+  .photos-teaser__ornament {
+    width: 220px;
+
+    margin: 2rem 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.8rem;
+
+    color: var(--coral);
+  }
+
+  .photos-teaser__ornament span {
+    flex: 1;
+
+    height: 1px;
+
+    background: rgba(234, 220, 197, 0.32);
+  }
+
+  .photos-teaser__ornament i {
+    font-style: normal;
+
+    font-size: 0.8rem;
+  }
+
+  /* ========================================
+     TEXT
+     ======================================== */
+
+  .photos-teaser__text {
+    max-width: 520px;
+
+    margin: 0;
+
+    color: rgba(255, 253, 248, 0.72);
+
+    font-size: 0.94rem;
+
+    line-height: 1.85;
+  }
+
+  .photos-teaser__text + .photos-teaser__text {
+    margin-top: 1rem;
+  }
+
+  /* ========================================
+     BUTTON
+     ======================================== */
+
+  .photos-teaser__button {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 1.2rem;
+
+    margin-top: 2.2rem;
+
+    min-height: 52px;
+
+    padding: 0 1.8rem;
+
+    border: 1px solid rgba(255, 253, 248, 0.3);
+
+    border-radius: 999px;
+
+    color: var(--ivory-light);
+
+    font-size: 0.78rem;
+
+    transition:
+      background 250ms ease,
+      color 250ms ease,
+      border-color 250ms ease,
+      transform 250ms ease;
+  }
+
+  .photos-teaser__button span {
+    color: var(--coral);
+
+    transition: transform 250ms ease;
+  }
+
+  .photos-teaser__button:hover {
+    background: var(--ivory-light);
+
+    border-color: var(--ivory-light);
+
+    color: var(--green-deep);
+
+    transform: translateY(-2px);
+  }
+
+  .photos-teaser__button:hover span {
+    transform: translateX(4px);
+  }
+
+  /* ========================================
+     VISUAL
+     ======================================== */
+
+  .photos-teaser__visual {
+    position: relative;
+
+    min-height: 500px;
+  }
+
+  .photos-teaser__memory {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--ivory);
+
+    border: 1px solid rgba(191, 154, 89, 0.4);
+
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+
+    color: var(--green-deep);
+  }
+
+  /* grande carte */
+
+  .photos-teaser__memory--one {
+    top: 30px;
+    left: 50%;
+
+    width: 280px;
+    height: 350px;
+
+    border-radius: 10rem 10rem 1.4rem 1.4rem;
+
+    transform: translateX(-50%) rotate(-3deg);
+  }
+
+  .photos-teaser__memory--one span {
+    color: var(--terracotta);
+
+    font-size: 3rem;
+  }
+
+  /* petite carte gauche */
+
+  .photos-teaser__memory--two {
+    left: 2%;
+    bottom: 35px;
+
+    width: 180px;
+    height: 220px;
+
+    border-radius: 1.3rem;
+
+    transform: rotate(-8deg);
+
+    font-family: var(--font-serif);
+
+    font-size: 1.5rem;
+  }
+
+  /* petite carte droite */
+
+  .photos-teaser__memory--three {
+    right: 2%;
+    bottom: 18px;
+
+    width: 190px;
+    height: 235px;
+
+    border-radius: 1.3rem;
+
+    transform: rotate(7deg);
+
+    color: var(--terracotta);
+
+    font-family: var(--font-script);
+
+    font-size: 3rem;
+  }
+
+  /* ========================================
+     HANDWRITTEN
+     ======================================== */
+
+  .photos-teaser__handwritten {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 50%;
+    bottom: -5px;
+
+    margin: 0;
+
+    color: var(--coral);
+
+    font-family: var(--font-script);
+
+    font-size: clamp(2rem, 3vw, 2.8rem);
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    transform: translateX(-50%) rotate(-3deg);
+  }
+
+  /* ========================================
+     MOBILE
+     ======================================== */
+
+  @media (max-width: 767px) {
+    .photos-teaser {
+      padding: 5rem 0;
+    }
+
+    .photos-teaser__inner {
+      width: calc(100% - 2rem);
+
+      grid-template-columns: 1fr;
+
+      gap: 2.2rem;
+    }
+
+    .photos-teaser__content {
+      text-align: center;
+    }
+
+    .photos-teaser__content h2 {
+      font-size: clamp(3.2rem, 14vw, 4.2rem);
+    }
+
+    .photos-teaser__ornament {
+      margin: 1.8rem auto;
+    }
+
+    .photos-teaser__text {
+      margin-inline: auto;
+    }
+
+    .photos-teaser__button {
+      margin-top: 2rem;
+    }
+
+    /* COLLAGE PLUS COMPACT */
+
+    .photos-teaser__visual {
+      min-height: 310px;
+
+      width: min(100%, 380px);
+
+      margin-inline: auto;
+    }
+
+    .photos-teaser__memory--one {
+      top: 15px;
+
+      width: 175px;
+      height: 225px;
+    }
+
+    .photos-teaser__memory--one span {
+      font-size: 2.3rem;
+    }
+
+    .photos-teaser__memory--two {
+      left: 4%;
+      bottom: 35px;
+
+      width: 115px;
+      height: 145px;
+
+      font-size: 1rem;
+    }
+
+    .photos-teaser__memory--three {
+      right: 4%;
+      bottom: 28px;
+
+      width: 120px;
+      height: 150px;
+
+      font-size: 2rem;
+    }
+
+    .photos-teaser__handwritten {
+      bottom: 0;
+
+      font-size: 1.75rem;
+    }
+  }
+</style>

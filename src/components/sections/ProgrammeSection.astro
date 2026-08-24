@@ -1,0 +1,533 @@
+<section id="programme" class="programme">
+  <div class="programme__inner">
+    <header class="programme__heading">
+      <p class="programme__script">Le grand jour</p>
+
+      <h2>
+        Le programme
+        <span>de notre journée</span>
+      </h2>
+
+      <p class="programme__intro">
+        Trois rendez-vous, quelques émotions, beaucoup de sourires… et une
+        soirée que nous espérons inoubliable.
+      </p>
+
+      <div class="programme__ornament" aria-hidden="true">
+        <span></span>
+        <i>♡</i>
+        <span></span>
+      </div>
+    </header>
+
+    <div class="programme__grid">
+      <!-- MAIRIE -->
+      <article class="programme-card">
+        <div class="programme-card__image">
+          <img
+            src="/images/locations/mairie-gemenos.jpeg"
+            alt="Mairie de Gémenos"
+          />
+
+          <span class="programme-card__time"> 14h30 </span>
+        </div>
+
+        <div class="programme-card__content">
+          <p class="programme-card__step">Première étape</p>
+
+          <h3>Cérémonie civile</h3>
+
+          <p>
+            Quelques mots, quelques signatures et le premier grand « oui » de la
+            journée. Nous vous donnons rendez-vous devant la mairie un peu avant
+            la cérémonie.
+          </p>
+
+          <a
+            href="https://maps.app.goo.gl/yjFzMtPX8cnfb1hu7"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="programme-card__link"
+          >
+            Mairie de Gémenos
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- CEREMONIE LAIQUE -->
+      <article class="programme-card programme-card--middle">
+        <div class="programme-card__image">
+          <img
+            src="/images/locations/lieu-ceremonie-laique.jpeg"
+            alt="Cérémonie laïque au Santa Maria à La Ciotat"
+          />
+
+          <span class="programme-card__time"> 16h30 </span>
+        </div>
+
+        <div class="programme-card__content">
+          <p class="programme-card__step">Deuxième oui</p>
+
+          <h3>Cérémonie laïque</h3>
+
+          <p>
+            Face à la Méditerranée, un moment plus personnel pour raconter notre
+            histoire, rire, s’émouvoir et renouveler notre promesse à notre
+            façon.
+          </p>
+
+          <a
+            href="https://maps.app.goo.gl/RWw6QLn9YLMibezy8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="programme-card__link"
+          >
+            Le Santa Maria · La Ciotat
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- RECEPTION -->
+      <article class="programme-card">
+        <div class="programme-card__image">
+          <img
+            src="/images/locations/salle-reception.jpg"
+            alt="Le Jardin des Passions, lieu de réception"
+          />
+
+          <span class="programme-card__time"> 18h </span>
+        </div>
+
+        <div class="programme-card__content">
+          <p class="programme-card__step">Place à la fête</p>
+
+          <h3>Cocktail & soirée</h3>
+
+          <p>
+            On range les mouchoirs et on sort les verres : cocktail, dîner,
+            musique et danse sont prévus jusqu’au bout de la nuit.
+          </p>
+
+          <a
+            href="https://maps.app.goo.gl/j3t45JnuqHGac8i58"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="programme-card__link"
+          >
+            Le Jardin des Passions
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <p class="programme__ending">
+      Et quelque part entre tout ça…
+      <span>profiter de chaque seconde.</span>
+    </p>
+  </div>
+</section>
+
+<style>
+  /* ========================================
+     SECTION
+     ======================================== */
+
+  .programme {
+    position: relative;
+
+    padding: clamp(6rem, 10vw, 9rem) 0;
+
+    overflow: hidden;
+
+    background: linear-gradient(180deg, #f5efe5 0%, var(--ivory) 100%);
+  }
+
+  .programme::before {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    top: -250px;
+    right: -220px;
+
+    border: 1px solid rgba(191, 154, 89, 0.18);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+  }
+
+  .programme__inner {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(calc(100% - 3rem), var(--container));
+
+    margin-inline: auto;
+  }
+
+  /* ========================================
+     HEADING
+     ======================================== */
+
+  .programme__heading {
+    max-width: 720px;
+
+    margin: 0 auto clamp(4rem, 7vw, 6rem);
+
+    text-align: center;
+  }
+
+  .programme__script {
+    margin: 0 0 0.5rem;
+
+    color: var(--terracotta);
+
+    font-family: var(--font-script);
+
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+  }
+
+  .programme__heading h2 {
+    margin: 0;
+
+    color: var(--green-deep);
+
+    font-family: var(--font-serif);
+
+    font-size: clamp(3.5rem, 6vw, 5.7rem);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+  }
+
+  .programme__heading h2 span {
+    display: block;
+
+    color: var(--green);
+
+    font-style: italic;
+  }
+
+  .programme__intro {
+    max-width: 520px;
+
+    margin: 1.8rem auto 0;
+
+    color: var(--text-soft);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+  }
+
+  .programme__ornament {
+    width: 220px;
+
+    margin: 1.8rem auto 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.8rem;
+
+    color: var(--terracotta);
+  }
+
+  .programme__ornament span {
+    flex: 1;
+
+    height: 1px;
+
+    background: rgba(191, 154, 89, 0.55);
+  }
+
+  .programme__ornament i {
+    font-style: normal;
+
+    font-size: 0.8rem;
+  }
+
+  /* ========================================
+     GRID
+     ======================================== */
+
+  .programme__grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: clamp(1.5rem, 3vw, 2.6rem);
+
+    align-items: start;
+  }
+
+  /* ========================================
+     CARD
+     ======================================== */
+
+  .programme-card {
+    position: relative;
+
+    text-align: center;
+  }
+
+  .programme-card--middle {
+    margin-top: 3rem;
+  }
+
+  /* ========================================
+     IMAGE EN ARCHE
+     ======================================== */
+
+  .programme-card__image {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 8px;
+
+    background: rgba(255, 253, 248, 0.9);
+
+    border: 1px solid rgba(191, 154, 89, 0.38);
+
+    border-radius: 14rem 14rem 1.5rem 1.5rem;
+
+    box-shadow: 0 20px 50px rgba(78, 72, 59, 0.07);
+  }
+
+  .programme-card__image img {
+    width: 100%;
+
+    aspect-ratio: 0.82;
+
+    object-fit: cover;
+
+    border-radius: 13rem 13rem 1rem 1rem;
+
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .programme-card:hover .programme-card__image img {
+    transform: scale(1.025);
+  }
+
+  /* ========================================
+     HEURE
+     ======================================== */
+
+  .programme-card__time {
+    position: absolute;
+
+    left: 50%;
+    bottom: 1.4rem;
+
+    min-width: 92px;
+
+    padding: 0.7rem 1rem;
+
+    background: rgba(255, 253, 248, 0.92);
+
+    border: 1px solid rgba(191, 154, 89, 0.4);
+
+    border-radius: 999px;
+
+    color: var(--terracotta);
+
+    font-family: var(--font-script);
+
+    font-size: 1.8rem;
+
+    line-height: 1;
+
+    transform: translateX(-50%);
+
+    backdrop-filter: blur(7px);
+  }
+
+  /* ========================================
+     CONTENT
+     ======================================== */
+
+  .programme-card__content {
+    padding: 2rem 0.6rem 0;
+  }
+
+  .programme-card__step {
+    margin: 0 0 0.7rem;
+
+    color: var(--terracotta);
+
+    font-size: 0.58rem;
+    font-weight: 500;
+
+    letter-spacing: 0.19em;
+
+    text-transform: uppercase;
+  }
+
+  .programme-card h3 {
+    margin: 0;
+
+    color: var(--green-deep);
+
+    font-family: var(--font-serif);
+
+    font-size: clamp(2rem, 3vw, 2.7rem);
+
+    font-weight: 400;
+
+    line-height: 1;
+  }
+
+  .programme-card__content > p:not(.programme-card__step) {
+    max-width: 340px;
+
+    margin: 1.3rem auto 0;
+
+    color: var(--text-soft);
+
+    font-size: 0.9rem;
+
+    line-height: 1.75;
+  }
+
+  /* ========================================
+     LIEN
+     ======================================== */
+
+  .programme-card__link {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.7rem;
+
+    margin-top: 1.5rem;
+
+    padding-bottom: 0.35rem;
+
+    border-bottom: 1px solid rgba(191, 154, 89, 0.55);
+
+    color: var(--green-deep);
+
+    font-family: var(--font-serif);
+
+    font-size: 1.05rem;
+
+    transition: color 250ms ease;
+  }
+
+  .programme-card__link span {
+    color: var(--terracotta);
+
+    font-family: var(--font-body);
+
+    font-size: 0.85rem;
+
+    transition: transform 250ms ease;
+  }
+
+  .programme-card__link:hover {
+    color: var(--terracotta);
+  }
+
+  .programme-card__link:hover span {
+    transform: translate(3px, -3px);
+  }
+
+  /* ========================================
+     ENDING
+     ======================================== */
+
+  .programme__ending {
+    margin: clamp(4rem, 8vw, 7rem) auto 0;
+
+    text-align: center;
+
+    color: var(--text-soft);
+
+    font-family: var(--font-serif);
+
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  }
+
+  .programme__ending span {
+    display: block;
+
+    margin-top: 0.2rem;
+
+    color: var(--terracotta);
+
+    font-family: var(--font-script);
+
+    font-size: 1.7em;
+  }
+
+  /* ========================================
+     MOBILE
+     ======================================== */
+
+  @media (max-width: 767px) {
+    .programme {
+      padding: 5rem 0;
+    }
+
+    .programme__inner {
+      width: calc(100% - 2rem);
+    }
+
+    .programme__heading {
+      margin-bottom: 3rem;
+    }
+
+    .programme__heading h2 {
+      font-size: clamp(3.2rem, 14vw, 4.2rem);
+    }
+
+    .programme__grid {
+      grid-template-columns: 1fr;
+
+      gap: 4.5rem;
+
+      width: min(100%, 430px);
+
+      margin-inline: auto;
+    }
+
+    .programme-card--middle {
+      margin-top: 0;
+    }
+
+    .programme-card__image {
+      border-radius: 12rem 12rem 1.4rem 1.4rem;
+    }
+
+    .programme-card__image img {
+      aspect-ratio: 0.9;
+
+      border-radius: 11rem 11rem 1rem 1rem;
+    }
+
+    .programme-card__content {
+      padding-top: 1.8rem;
+    }
+
+    .programme-card h3 {
+      font-size: 2.4rem;
+    }
+
+    .programme__ending {
+      margin-top: 5rem;
+    }
+  }
+</style>

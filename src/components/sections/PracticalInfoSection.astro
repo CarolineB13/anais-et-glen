@@ -1,0 +1,670 @@
+<section id="infos" class="infos">
+  <img
+    src="/images/decorations/deco1.png"
+    alt=""
+    class="infos__flowers"
+    aria-hidden="true"
+  />
+
+  <div class="infos__inner">
+    <!-- INTRO -->
+    <div class="infos__heading">
+      <p class="infos__script">Pour que tout soit simple…</p>
+
+      <h2>
+        Les petites choses
+        <span>à savoir.</span>
+      </h2>
+
+      <p class="infos__intro">
+        Quelques informations pratiques pour profiter pleinement de la journée
+        sans avoir à penser à l’organisation.
+      </p>
+
+      <div class="infos__ornament" aria-hidden="true">
+        <span></span>
+        <i>♡</i>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="infos__faq">
+      <!-- 01 -->
+      <details class="faq-item">
+        <summary>
+          <span>Où dormir ?</span>
+
+          <i aria-hidden="true"></i>
+        </summary>
+
+        <div class="faq-item__answer">
+          <p>
+            Si vous avez besoin d’un hébergement, n’hésitez pas à nous en parler
+            : nous ferons au mieux pour vous aider à trouver une solution.
+          </p>
+
+          <p>
+            Vous trouverez également des hôtels et logements dans les environs
+            de Gémenos, Aubagne, La Ciotat et Cuges-les-Pins.
+          </p>
+
+          <p>
+            Le mois de juin étant particulièrement demandé dans la région,
+            pensez à réserver suffisamment tôt.
+          </p>
+        </div>
+      </details>
+
+      <!-- 02 -->
+      <details class="faq-item">
+        <summary>
+          <span>Comment se déplacer ?</span>
+
+          <i aria-hidden="true"></i>
+        </summary>
+
+        <div class="faq-item__answer">
+          <p>
+            La journée se déroulera sur plusieurs lieux. Nous vous conseillons
+            donc de privilégier le covoiturage lorsque cela est possible.
+          </p>
+
+          <p>
+            Pensez à anticiper les trajets entre Gémenos, La Ciotat et
+            Cuges-les-Pins, particulièrement pendant la période estivale.
+          </p>
+        </div>
+      </details>
+
+      <!-- 03 -->
+      <details class="faq-item">
+        <summary>
+          <span>Et les enfants ?</span>
+
+          <i aria-hidden="true"></i>
+        </summary>
+
+        <div class="faq-item__answer">
+          <p>Les enfants sont les bienvenus.</p>
+
+          <p>
+            Aucune garde ni animation dédiée ne sera toutefois prévue : ils
+            resteront donc sous la surveillance de leurs parents.
+          </p>
+
+          <p>
+            Certains espaces pourront également demander une vigilance
+            particulière au cours de la journée et de la soirée.
+          </p>
+        </div>
+      </details>
+
+      <!-- 04 -->
+      <details class="faq-item">
+        <summary>
+          <span>Repas & allergies</span>
+
+          <i aria-hidden="true"></i>
+        </summary>
+
+        <div class="faq-item__answer">
+          <p>Nous faisons en sorte qu’il y en ait pour tous les goûts.</p>
+
+          <p>
+            Si vous avez une allergie ou une contrainte alimentaire importante,
+            indiquez-la simplement dans le formulaire RSVP.
+          </p>
+
+          <p>
+            Nous pourrons ainsi transmettre l’information au traiteur et
+            organiser les choses au mieux.
+          </p>
+        </div>
+      </details>
+
+      <!-- 05 -->
+      <details class="faq-item">
+        <summary>
+          <span>Photos & vidéos</span>
+
+          <i aria-hidden="true"></i>
+        </summary>
+
+        <div class="faq-item__answer">
+          <p>
+            Un photographe et un vidéaste seront présents pendant la journée.
+          </p>
+
+          <p>
+            Mais nous serons aussi ravis de découvrir tous les petits moments
+            que vous aurez capturés de votre côté.
+          </p>
+
+          <p>
+            Une page dédiée permettra de retrouver et partager facilement les
+            photos et vidéos du mariage.
+          </p>
+
+          <a href="/photos">
+            Découvrir l’espace photos
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </details>
+
+      <!-- 06 -->
+      <details class="faq-item">
+        <summary>
+          <span>Un dernier conseil ?</span>
+
+          <i aria-hidden="true"></i>
+        </summary>
+
+        <div class="faq-item__answer">
+          <p>
+            Prévoyez une paire de chaussures dans laquelle vous pourrez vraiment
+            danser.
+          </p>
+
+          <p>
+            Venez avec votre bonne humeur, votre énergie et votre envie de
+            profiter : ce sont les seuls accessoires indispensables.
+          </p>
+
+          <p>
+            Et si vous ne connaissez pas encore tout le monde, quelques
+            discussions et quelques pas de danse devraient vite arranger ça.
+          </p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+<script>
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const summary = item.querySelector("summary");
+    const content = item.querySelector(".faq-item__answer");
+
+    if (!summary || !content) return;
+
+    let animation;
+    let isClosing = false;
+    let isExpanding = false;
+
+    summary.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      item.style.overflow = "hidden";
+
+      if (isClosing || !item.open) {
+        // Ferme les autres questions déjà ouvertes
+        faqItems.forEach((otherItem) => {
+          if (otherItem !== item && otherItem.open) {
+            const otherSummary = otherItem.querySelector("summary");
+
+            otherSummary?.click();
+          }
+        });
+
+        open();
+      } else if (isExpanding || item.open) {
+        close();
+      }
+    });
+
+    function close() {
+      isClosing = true;
+
+      const startHeight = `${item.offsetHeight}px`;
+      const endHeight = `${summary.offsetHeight}px`;
+
+      if (animation) {
+        animation.cancel();
+      }
+
+      animation = item.animate(
+        {
+          height: [startHeight, endHeight],
+        },
+        {
+          duration: 460,
+          easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+        },
+      );
+
+      animation.onfinish = () => {
+        item.open = false;
+        cleanup();
+      };
+
+      animation.oncancel = () => {
+        isClosing = false;
+      };
+    }
+
+    function open() {
+      item.style.height = `${item.offsetHeight}px`;
+
+      item.open = true;
+
+      requestAnimationFrame(() => {
+        expand();
+      });
+    }
+
+    function expand() {
+      isExpanding = true;
+
+      const startHeight = `${item.offsetHeight}px`;
+
+      const endHeight = `${summary.offsetHeight + content.offsetHeight}px`;
+
+      if (animation) {
+        animation.cancel();
+      }
+
+      animation = item.animate(
+        {
+          height: [startHeight, endHeight],
+        },
+        {
+          duration: 520,
+          easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+        },
+      );
+
+      animation.onfinish = () => {
+        cleanup();
+      };
+
+      animation.oncancel = () => {
+        isExpanding = false;
+      };
+    }
+
+    function cleanup() {
+      item.style.height = "";
+      item.style.overflow = "";
+
+      animation = null;
+      isClosing = false;
+      isExpanding = false;
+    }
+  });
+</script>
+<style>
+  /* ========================================
+     SECTION
+     ======================================== */
+
+  .infos {
+    position: relative;
+
+    padding: clamp(6rem, 10vw, 9rem) 0;
+
+    overflow: hidden;
+
+    background: linear-gradient(180deg, #eef2ea 0%, #e2e9df 100%);
+  }
+
+  .infos__inner {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(calc(100% - 3rem), 1120px);
+
+    margin-inline: auto;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(280px, 0.75fr)
+      minmax(0, 1.25fr);
+
+    gap: clamp(4rem, 9vw, 8rem);
+
+    align-items: start;
+  }
+
+  /* ========================================
+     HEADING
+     ======================================== */
+
+  .infos__heading {
+    position: sticky;
+
+    top: 3rem;
+
+    padding-top: 1rem;
+  }
+
+  .infos__script {
+    margin: 0 0 0.7rem;
+
+    color: var(--terracotta);
+
+    font-family: var(--font-script);
+
+    font-size: clamp(2.1rem, 3.5vw, 3rem);
+  }
+
+  .infos__heading h2 {
+    margin: 0;
+
+    color: var(--green-deep);
+
+    font-family: var(--font-serif);
+
+    font-size: clamp(3.4rem, 5.5vw, 5rem);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+  }
+
+  .infos__heading h2 span {
+    display: block;
+
+    color: var(--terracotta);
+
+    font-style: italic;
+  }
+
+  .infos__intro {
+    max-width: 390px;
+
+    margin: 1.8rem 0 0;
+
+    color: var(--text-soft);
+
+    font-size: 0.94rem;
+
+    line-height: 1.85;
+  }
+
+  .infos__ornament {
+    width: 200px;
+
+    margin-top: 2rem;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.8rem;
+
+    color: var(--terracotta);
+  }
+
+  .infos__ornament span {
+    flex: 1;
+
+    height: 1px;
+
+    background: rgba(191, 154, 89, 0.55);
+  }
+
+  .infos__ornament i {
+    font-style: normal;
+
+    font-size: 0.8rem;
+  }
+
+  /* ========================================
+     FAQ
+     ======================================== */
+
+  .infos__faq {
+    border-top: 1px solid rgba(64, 101, 86, 0.2);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(64, 101, 86, 0.2);
+  }
+
+  .faq-item summary {
+    position: relative;
+
+    min-height: 86px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    padding: 1.4rem 0;
+
+    list-style: none;
+
+    cursor: pointer;
+
+    color: var(--green-deep);
+
+    font-family: var(--font-serif);
+
+    font-size: clamp(1.5rem, 2.3vw, 2rem);
+
+    transition: color 250ms ease;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary:hover {
+    color: var(--terracotta);
+  }
+
+  /* ========================================
+     PLUS / MOINS
+     ======================================== */
+
+  .faq-item summary i {
+    position: relative;
+
+    flex: 0 0 42px;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(64, 101, 86, 0.25);
+
+    border-radius: 50%;
+
+    transition:
+      border-color 250ms ease,
+      transform 300ms ease;
+  }
+
+  .faq-item summary i::before,
+  .faq-item summary i::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 14px;
+    height: 1px;
+
+    background: var(--terracotta);
+
+    transform: translate(-50%, -50%);
+
+    transition: transform 300ms ease;
+  }
+
+  .faq-item summary i::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .faq-item[open] summary i {
+    border-color: rgba(201, 111, 88, 0.45);
+
+    transform: rotate(180deg);
+  }
+
+  .faq-item[open] summary i::after {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  /* ========================================
+     ANSWER
+     ======================================== */
+
+  .faq-item__answer {
+    max-width: 620px;
+
+    padding: 0 4.8rem 2rem 0;
+  }
+
+  .faq-item__answer p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    font-size: 0.92rem;
+
+    line-height: 1.85;
+  }
+
+  .faq-item__answer p + p {
+    margin-top: 0.8rem;
+  }
+
+  .faq-item__answer a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.7rem;
+
+    margin-top: 1.3rem;
+
+    padding-bottom: 0.25rem;
+
+    border-bottom: 1px solid rgba(191, 154, 89, 0.55);
+
+    color: var(--green-deep);
+
+    font-family: var(--font-serif);
+
+    font-size: 1.1rem;
+  }
+
+  .faq-item__answer a span {
+    color: var(--terracotta);
+
+    font-family: var(--font-body);
+  }
+
+  /* ========================================
+     FLOWERS
+     ======================================== */
+
+  .infos__flowers {
+    position: absolute;
+
+    z-index: 1;
+
+    width: clamp(280px, 30vw, 460px);
+
+    left: -160px;
+    bottom: -130px;
+
+    opacity: 0.28;
+
+    mix-blend-mode: multiply;
+
+    transform: rotate(10deg);
+
+    pointer-events: none;
+  }
+  .faq-item__answer {
+    opacity: 0;
+
+    transform: translateY(-6px);
+
+    transition:
+      opacity 380ms ease,
+      transform 480ms ease;
+  }
+
+  .faq-item[open] .faq-item__answer {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+  /* ========================================
+     MOBILE
+     ======================================== */
+
+  @media (max-width: 767px) {
+    .infos {
+      padding: 5rem 0;
+    }
+
+    .infos__inner {
+      width: calc(100% - 2rem);
+
+      grid-template-columns: 1fr;
+
+      gap: 3.7rem;
+    }
+
+    .infos__heading {
+      position: static;
+
+      padding-top: 0;
+
+      text-align: center;
+    }
+
+    .infos__heading h2 {
+      font-size: clamp(3.2rem, 14vw, 4.2rem);
+    }
+
+    .infos__intro {
+      margin: 1.6rem auto 0;
+    }
+
+    .infos__ornament {
+      margin: 1.8rem auto 0;
+    }
+
+    .faq-item summary {
+      min-height: 76px;
+
+      gap: 1rem;
+
+      padding: 1.25rem 0;
+
+      font-size: 1.55rem;
+    }
+
+    .faq-item summary i {
+      flex-basis: 38px;
+
+      width: 38px;
+      height: 38px;
+    }
+
+    .faq-item__answer {
+      padding: 0 0 1.7rem;
+    }
+
+    .infos__flowers {
+      width: 280px;
+
+      left: -150px;
+      bottom: -90px;
+
+      opacity: 0.18;
+    }
+  }
+</style>

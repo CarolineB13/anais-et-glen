@@ -1,0 +1,80 @@
+:root {
+  --ivory: #fbf7ef;
+  --ivory-light: #fffdf8;
+
+  --green: #688574;
+  --green-deep: #406556;
+
+  --sage: #aabca8;
+  --sage-light: #dfe7dc;
+
+  --terracotta: #d47c65;
+  --coral: #ee8b79;
+
+  --champagne: #eadcc5;
+  --sand: #d8c4a4;
+  --gold: #bf9a59;
+
+  --ink: #4b4740;
+  --text-soft: #746e66;
+
+  --line: rgba(64, 101, 86, 0.15);
+
+  --container: 1240px;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-script: "Allura", cursive;
+  --font-body: "Inter", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+
+  background: var(--ivory);
+  color: var(--ink);
+
+  font-family: var(--font-body);
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+main {
+  overflow: hidden;
+}

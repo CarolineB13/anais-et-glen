@@ -159,25 +159,31 @@
   .story__monogram {
     position: absolute;
 
-    z-index: 3;
+    z-index: 4;
 
-    top: 50%;
-    left: 50%;
+    top: 49%;
+    left: 53%;
 
     margin: 0;
 
-    color: rgba(64, 101, 86, 0.75);
+    color: var(--green-deep);
 
     font-family: var(--font-script);
 
-    font-size: clamp(3.8rem, 6vw, 5.8rem);
+    font-size: clamp(4.5rem, 7vw, 6.8rem);
 
     line-height: 1;
 
     white-space: nowrap;
 
+    text-shadow:
+      0 2px 0 rgba(255, 253, 248, 0.95),
+      0 0 18px rgba(255, 253, 248, 0.9),
+      0 0 34px rgba(255, 253, 248, 0.75);
+
     transform: translate(-50%, -50%);
   }
+
   .story__monogram span {
     color: var(--terracotta);
   }
@@ -405,14 +411,19 @@
     }
 
     .story__flowers {
-      width: 360px;
+      width: 340px;
 
-      left: -60px;
-      bottom: -35px;
+      left: -78px;
+      bottom: -38px;
     }
 
     .story__monogram {
-      transform: translate(-52%, -50%);
+      top: 48%;
+      left: 56%;
+
+      font-size: clamp(4.6rem, 20vw, 6rem);
+
+      transform: translate(-50%, -50%);
     }
 
     .story__content {

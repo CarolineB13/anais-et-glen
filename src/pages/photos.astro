@@ -1,0 +1,673 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/navigation/Header.astro";
+---
+
+<BaseLayout
+  title="Photos — Anaïs & Glen"
+  description="L’espace photos du mariage d’Anaïs et Glen."
+>
+  <Header />
+
+  <main class="photos-page">
+    <section class="photos-hero">
+      <img
+        src="/images/decorations/deco1.png"
+        alt=""
+        class="photos-hero__flowers photos-hero__flowers--left"
+        aria-hidden="true"
+      />
+
+      <img
+        src="/images/decorations/deco5.png"
+        alt=""
+        class="photos-hero__flowers photos-hero__flowers--right"
+        aria-hidden="true"
+      />
+
+      <div class="photos-hero__inner">
+        <p class="photos-hero__script">Un peu de patience…</p>
+
+        <h1>
+          Les souvenirs
+          <span>arriveront ici.</span>
+        </h1>
+
+        <div class="photos-hero__ornament" aria-hidden="true">
+          <span></span>
+          <i>♡</i>
+          <span></span>
+        </div>
+
+        <p class="photos-hero__intro">
+          Après le mariage, cet espace réunira les images de la journée : celles
+          du photographe, du vidéaste et tous les petits instants capturés par
+          nos invités.
+        </p>
+
+        <p class="photos-hero__date">Rendez-vous après le 19 juin 2027</p>
+      </div>
+    </section>
+
+    <section class="memories" aria-labelledby="memories-title">
+      <div class="memories__inner">
+        <div class="memories__heading">
+          <p class="memories__eyebrow">À retrouver ici</p>
+
+          <h2 id="memories-title">
+            Une journée,
+            <span>mille regards.</span>
+          </h2>
+        </div>
+
+        <div class="memories__grid">
+          <article class="memory-card memory-card--large">
+            <div class="memory-card__visual memory-card__visual--heart">
+              <span aria-hidden="true">♡</span>
+            </div>
+
+            <div class="memory-card__content">
+              <p>La galerie officielle</p>
+              <h3>Les photos des mariés</h3>
+              <span>Bientôt disponible</span>
+            </div>
+          </article>
+
+          <article class="memory-card">
+            <div class="memory-card__visual memory-card__visual--date">
+              <span>19.06.27</span>
+            </div>
+
+            <div class="memory-card__content">
+              <p>Les petits instants</p>
+              <h3>Vos photos & vidéos</h3>
+              <span>Partage après le mariage</span>
+            </div>
+          </article>
+
+          <article class="memory-card">
+            <div class="memory-card__visual memory-card__visual--initials">
+              <span>A & G</span>
+            </div>
+
+            <div class="memory-card__content">
+              <p>À garder précieusement</p>
+              <h3>Nos souvenirs réunis</h3>
+              <span>Un seul espace</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="share-demo">
+      <div class="share-demo__card">
+        <p class="share-demo__script">Et vos souvenirs ?</p>
+
+        <h2>Vous pourrez aussi partager les vôtres.</h2>
+
+        <p class="share-demo__text">
+          Sur le véritable site, les invités pourront déposer leurs photos et
+          vidéos depuis leur téléphone après le mariage. Ici, cette zone reste
+          volontairement inactive puisqu’il s’agit d’un site de démonstration.
+        </p>
+
+        <button type="button" class="share-demo__button" disabled>
+          Ajouter mes photos
+          <span aria-hidden="true">＋</span>
+        </button>
+
+        <p class="share-demo__note">Fonction de démonstration — aucun fichier n’est envoyé.</p>
+      </div>
+    </section>
+
+    <section class="photos-return">
+      <p>En attendant le grand jour…</p>
+
+      <a href="/#hero">
+        Retourner à l’invitation
+        <span aria-hidden="true">→</span>
+      </a>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .photos-page {
+    background: var(--ivory-light);
+  }
+
+  .photos-hero {
+    position: relative;
+
+    min-height: 760px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9rem 1.5rem 6rem;
+
+    overflow: hidden;
+
+    background:
+      radial-gradient(
+        circle at 50% 20%,
+        rgba(234, 220, 197, 0.28),
+        transparent 40%
+      ),
+      var(--ivory);
+  }
+
+  .photos-hero__inner {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(100%, 900px);
+
+    padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 7vw, 5rem);
+
+    border: 1px solid rgba(191, 154, 89, 0.34);
+    border-radius: 20rem 20rem 2.5rem 2.5rem;
+
+    text-align: center;
+  }
+
+  .photos-hero__inner::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border: 1px solid rgba(104, 133, 116, 0.11);
+    border-radius: inherit;
+
+    pointer-events: none;
+  }
+
+  .photos-hero__script {
+    margin: 0 0 0.7rem;
+
+    color: var(--terracotta);
+
+    font-family: var(--font-script);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+  }
+
+  .photos-hero h1 {
+    margin: 0;
+
+    color: var(--green-deep);
+
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 8vw, 7rem);
+    font-weight: 400;
+
+    line-height: 0.9;
+  }
+
+  .photos-hero h1 span {
+    display: block;
+
+    color: var(--terracotta);
+
+    font-style: italic;
+  }
+
+  .photos-hero__ornament {
+    width: min(280px, 70%);
+
+    margin: 2rem auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.9rem;
+
+    color: var(--terracotta);
+  }
+
+  .photos-hero__ornament span {
+    flex: 1;
+
+    height: 1px;
+
+    background: rgba(191, 154, 89, 0.52);
+  }
+
+  .photos-hero__ornament i {
+    font-style: normal;
+  }
+
+  .photos-hero__intro {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: var(--text-soft);
+
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 2vw, 1.55rem);
+
+    line-height: 1.6;
+  }
+
+  .photos-hero__date {
+    margin: 2rem 0 0;
+
+    color: var(--green-deep);
+
+    font-size: 0.66rem;
+    font-weight: 500;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+  }
+
+  .photos-hero__flowers {
+    position: absolute;
+
+    z-index: 1;
+
+    width: clamp(230px, 28vw, 430px);
+
+    mix-blend-mode: multiply;
+
+    pointer-events: none;
+  }
+
+  .photos-hero__flowers--left {
+    left: -100px;
+    bottom: -40px;
+
+    transform: rotate(7deg);
+
+    opacity: 0.52;
+  }
+
+  .photos-hero__flowers--right {
+    top: 70px;
+    right: -110px;
+
+    transform: rotate(-10deg);
+
+    opacity: 0.45;
+  }
+
+  .memories {
+    padding: clamp(6rem, 10vw, 9rem) 0;
+
+    background: linear-gradient(180deg, #eef2ea 0%, #e5ebe2 100%);
+  }
+
+  .memories__inner {
+    width: min(calc(100% - 3rem), var(--container));
+
+    margin-inline: auto;
+  }
+
+  .memories__heading {
+    max-width: 720px;
+
+    margin: 0 auto clamp(3.5rem, 6vw, 5rem);
+
+    text-align: center;
+  }
+
+  .memories__eyebrow {
+    margin: 0 0 0.6rem;
+
+    color: var(--terracotta);
+
+    font-family: var(--font-script);
+    font-size: clamp(2.1rem, 4vw, 3rem);
+  }
+
+  .memories__heading h2 {
+    margin: 0;
+
+    color: var(--green-deep);
+
+    font-family: var(--font-serif);
+    font-size: clamp(3.5rem, 6vw, 5.6rem);
+    font-weight: 400;
+
+    line-height: 0.95;
+  }
+
+  .memories__heading h2 span {
+    display: block;
+
+    color: var(--terracotta);
+
+    font-style: italic;
+  }
+
+  .memories__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr 0.9fr;
+
+    gap: clamp(1.3rem, 2.5vw, 2rem);
+  }
+
+  .memory-card {
+    padding: 8px;
+
+    border: 1px solid rgba(191, 154, 89, 0.32);
+    border-radius: 2rem;
+
+    background: rgba(255, 253, 248, 0.86);
+
+    box-shadow: 0 18px 48px rgba(72, 66, 57, 0.06);
+  }
+
+  .memory-card__visual {
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 1.6rem 1.6rem 0.6rem 0.6rem;
+
+    background:
+      radial-gradient(circle at 50% 45%, rgba(255, 253, 248, 0.7), transparent 32%),
+      var(--sage-light);
+  }
+
+  .memory-card--large .memory-card__visual {
+    min-height: 410px;
+
+    border-radius: 12rem 12rem 0.8rem 0.8rem;
+  }
+
+  .memory-card__visual--heart span {
+    color: var(--terracotta);
+
+    font-size: 4rem;
+  }
+
+  .memory-card__visual--date span {
+    color: var(--green-deep);
+
+    font-family: var(--font-serif);
+    font-size: 2rem;
+  }
+
+  .memory-card__visual--initials span {
+    color: var(--terracotta);
+
+    font-family: var(--font-script);
+    font-size: 4rem;
+  }
+
+  .memory-card__content {
+    padding: 1.5rem 1.2rem 1.7rem;
+
+    text-align: center;
+  }
+
+  .memory-card__content p {
+    margin: 0 0 0.5rem;
+
+    color: var(--terracotta);
+
+    font-size: 0.56rem;
+    font-weight: 500;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+  }
+
+  .memory-card__content h3 {
+    margin: 0;
+
+    color: var(--green-deep);
+
+    font-family: var(--font-serif);
+    font-size: clamp(1.7rem, 2.5vw, 2.25rem);
+    font-weight: 400;
+  }
+
+  .memory-card__content > span {
+    display: block;
+
+    margin-top: 0.6rem;
+
+    color: var(--text-soft);
+
+    font-size: 0.72rem;
+  }
+
+  .share-demo {
+    padding: clamp(6rem, 10vw, 9rem) 1.5rem;
+
+    background: var(--ivory-light);
+  }
+
+  .share-demo__card {
+    width: min(100%, 820px);
+
+    margin-inline: auto;
+
+    padding: clamp(3rem, 7vw, 5.5rem) clamp(1.5rem, 7vw, 5rem);
+
+    border: 1px solid rgba(191, 154, 89, 0.32);
+    border-radius: 3rem;
+
+    background: var(--ivory);
+
+    text-align: center;
+
+    box-shadow: 0 24px 65px rgba(72, 66, 57, 0.06);
+  }
+
+  .share-demo__script {
+    margin: 0 0 0.6rem;
+
+    color: var(--terracotta);
+
+    font-family: var(--font-script);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+  }
+
+  .share-demo h2 {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: var(--green-deep);
+
+    font-family: var(--font-serif);
+    font-size: clamp(2.7rem, 5vw, 4.4rem);
+    font-weight: 400;
+
+    line-height: 1;
+  }
+
+  .share-demo__text {
+    max-width: 590px;
+
+    margin: 1.5rem auto 0;
+
+    color: var(--text-soft);
+
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+  }
+
+  .share-demo__button {
+    width: min(100%, 320px);
+    min-height: 56px;
+
+    margin-top: 2rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 1.5rem;
+
+    border: 0;
+    border-radius: 999px;
+
+    background: var(--green-deep);
+
+    color: var(--ivory-light);
+
+    opacity: 0.72;
+
+    cursor: not-allowed;
+  }
+
+  .share-demo__button span {
+    color: var(--coral);
+
+    font-size: 1.25rem;
+  }
+
+  .share-demo__note {
+    margin: 0.8rem 0 0;
+
+    color: var(--text-soft);
+
+    font-size: 0.66rem;
+
+    opacity: 0.72;
+  }
+
+  .photos-return {
+    padding: 4.5rem 1.5rem 5rem;
+
+    background: var(--green-deep);
+
+    text-align: center;
+  }
+
+  .photos-return p {
+    margin: 0;
+
+    color: var(--sage-light);
+
+    font-family: var(--font-script);
+    font-size: 2rem;
+  }
+
+  .photos-return a {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 0.8rem;
+
+    margin-top: 1rem;
+
+    padding-bottom: 0.3rem;
+
+    border-bottom: 1px solid rgba(238, 139, 121, 0.55);
+
+    color: var(--ivory-light);
+
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+  }
+
+  .photos-return a span {
+    color: var(--coral);
+
+    font-family: var(--font-body);
+  }
+
+  @media (max-width: 900px) {
+    .memories__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .memory-card--large {
+      grid-column: 1 / -1;
+
+      width: min(100%, 560px);
+
+      margin-inline: auto;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .photos-hero {
+      min-height: 680px;
+
+      padding: 7rem 1rem 4.5rem;
+    }
+
+    .photos-hero__inner {
+      padding: 4rem 1.2rem 3.5rem;
+
+      border-radius: 10rem 10rem 1.7rem 1.7rem;
+    }
+
+    .photos-hero h1 {
+      font-size: clamp(3.7rem, 17vw, 5rem);
+    }
+
+    .photos-hero__flowers {
+      width: 220px;
+    }
+
+    .photos-hero__flowers--left {
+      left: -135px;
+    }
+
+    .photos-hero__flowers--right {
+      right: -140px;
+
+      opacity: 0.3;
+    }
+
+    .memories {
+      padding: 5rem 0;
+    }
+
+    .memories__inner {
+      width: calc(100% - 2rem);
+    }
+
+    .memories__heading h2 {
+      font-size: clamp(3.1rem, 14vw, 4.1rem);
+    }
+
+    .memories__grid {
+      grid-template-columns: 1fr;
+
+      width: min(100%, 430px);
+
+      margin-inline: auto;
+    }
+
+    .memory-card--large {
+      grid-column: auto;
+
+      width: 100%;
+    }
+
+    .memory-card__visual,
+    .memory-card--large .memory-card__visual {
+      min-height: 300px;
+    }
+
+    .share-demo {
+      padding: 5rem 1rem;
+    }
+
+    .share-demo__card {
+      padding: 3.5rem 1.3rem;
+
+      border-radius: 2rem;
+    }
+  }
+</style>

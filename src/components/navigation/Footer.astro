@@ -1,0 +1,131 @@
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p class="site-footer__couple">
+      Anaïs <span>&</span> Glen
+    </p>
+
+    <p class="site-footer__date">19 · 06 · 2027</p>
+
+    <p class="site-footer__credit">
+      Site imaginé avec <span aria-hidden="true">♡</span> par <a
+        href="https://happyclicks.fr"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Découvrir Happyclicks"
+      >
+        Happyclicks
+      </a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    position: relative;
+
+    padding: 2.4rem 1.5rem 2.7rem;
+
+    background: var(--green-deep);
+
+    color: var(--ivory-light);
+  }
+
+  .site-footer__inner {
+    width: min(100%, 1120px);
+
+    margin-inline: auto;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    gap: 2rem;
+  }
+
+  .site-footer p {
+    margin: 0;
+  }
+
+  .site-footer__couple {
+    font-family: var(--font-script);
+
+    font-size: 2rem;
+
+    line-height: 1;
+  }
+
+  .site-footer__couple span,
+  .site-footer__credit > span {
+    color: var(--coral);
+  }
+
+  .site-footer__date {
+    color: rgba(255, 253, 248, 0.66);
+
+    font-size: 0.62rem;
+    font-weight: 500;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+  }
+
+  .site-footer__credit {
+    justify-self: end;
+
+    color: rgba(255, 253, 248, 0.62);
+
+    font-size: 0.7rem;
+
+    line-height: 1.5;
+  }
+
+  .site-footer__credit a {
+    position: relative;
+
+    color: var(--ivory-light);
+
+    font-weight: 500;
+  }
+
+  .site-footer__credit a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -3px;
+
+    width: 100%;
+    height: 1px;
+
+    background: var(--coral);
+
+    transform: scaleX(0.35);
+    transform-origin: left;
+
+    transition: transform 250ms ease;
+  }
+
+  .site-footer__credit a:hover::after {
+    transform: scaleX(1);
+  }
+
+  @media (max-width: 700px) {
+    .site-footer {
+      padding: 2.5rem 1rem;
+    }
+
+    .site-footer__inner {
+      grid-template-columns: 1fr;
+
+      gap: 0.8rem;
+
+      text-align: center;
+    }
+
+    .site-footer__credit {
+      justify-self: center;
+    }
+  }
+</style>

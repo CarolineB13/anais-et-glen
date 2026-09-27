@@ -1,0 +1,19 @@
+{
+  "name": "Anaïs & Glen — Mariage",
+  "short_name": "Anaïs & Glen",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#fffaf1",
+  "background_color": "#fffaf1",
+  "display": "standalone"
+}

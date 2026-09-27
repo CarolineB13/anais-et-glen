@@ -4,8 +4,13 @@ import Footer from "../components/navigation/Footer.astro";
 
 const {
   title = "Anaïs & Glen — Mariage",
-  description = "Anaïs & Glen vous invitent à célébrer leur mariage.",
+  description = "Anaïs & Glen vous invitent à célébrer leur mariage le 19 juin 2027.",
+  image = "/images/og/anais-glen-og.png",
 } = Astro.props;
+
+const siteUrl = "https://anais-et-glen.fr";
+const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
+const socialImageURL = new URL(image, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -14,10 +19,35 @@ const {
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fffaf1" />
 
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
 
     <title>{title}</title>
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Anaïs & Glen" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Anaïs & Glen — Mariage le 19 juin 2027" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+    <meta name="twitter:image:alt" content="Anaïs & Glen — Mariage le 19 juin 2027" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,5 +61,69 @@ const {
   <body id="top">
     <slot />
     <Footer />
+
+    <script>
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      const revealGroups = [
+        [".story__visual", "left", 0],
+        [".story__content", "right", 0],
+        [".story__detail", "up", 90],
+        [".programme__heading", "up", 0],
+        [".programme-card", "up", 110],
+        [".programme__ending", "up", 0],
+        [".dress__heading", "up", 0],
+        [".dress__group-heading", "up", 0],
+        [".dress-look", "up", 70],
+        [".dress__ending", "up", 0],
+        [".infos__heading", "up", 0],
+        [".faq-item", "up", 60],
+        [".photos-teaser__content", "left", 0],
+        [".photos-teaser__visual", "right", 0],
+        [".rsvp__heading", "up", 0],
+        [".rsvp__card", "up", 0],
+        [".final-section__photo", "left", 0],
+        [".final-section__content", "right", 0],
+        [".photos-hero__inner", "up", 0],
+        [".memories__heading", "up", 0],
+        [".memory-card", "up", 100],
+        [".share-demo__card", "up", 0],
+        [".photos-return", "up", 0],
+      ];
+
+      const revealElements = [];
+
+      revealGroups.forEach(([selector, direction, stagger]) => {
+        document.querySelectorAll(selector).forEach((element, index) => {
+          element.setAttribute("data-reveal", direction);
+          element.style.setProperty(
+            "--reveal-delay",
+            `${Number(stagger) * index}ms`,
+          );
+          revealElements.push(element);
+        });
+      });
+
+      if (reduceMotion || !("IntersectionObserver" in window)) {
+        revealElements.forEach((element) =>
+          element.classList.add("is-visible"),
+        );
+      } else {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.14, rootMargin: "0px 0px -8% 0px" },
+        );
+
+        revealElements.forEach((element) => observer.observe(element));
+      }
+    </script>
   </body>
 </html>

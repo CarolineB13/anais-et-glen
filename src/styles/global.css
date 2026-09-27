@@ -78,3 +78,132 @@ button {
 main {
   overflow: hidden;
 }
+
+/* ========================================
+   ANIMATIONS D'ENTRÉE
+   ======================================== */
+
+[data-reveal] {
+  opacity: 0;
+  transition:
+    opacity 760ms ease var(--reveal-delay, 0ms),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-reveal="up"] {
+  transform: translate3d(0, 28px, 0);
+}
+
+[data-reveal="left"] {
+  transform: translate3d(-34px, 0, 0);
+}
+
+[data-reveal="right"] {
+  transform: translate3d(34px, 0, 0);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes heroRevealUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes heroRevealSoft {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes flowerFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -5px, 0) rotate(0.5deg);
+  }
+}
+
+.hero__frame {
+  animation: heroRevealSoft 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero__kicker,
+.hero__names,
+.hero__announcement,
+.hero__ornament,
+.hero__intro,
+.countdown,
+.hero__date,
+.hero__actions {
+  opacity: 0;
+  animation: heroRevealUp 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero__kicker { animation-delay: 120ms; }
+.hero__names { animation-delay: 200ms; }
+.hero__announcement { animation-delay: 290ms; }
+.hero__ornament { animation-delay: 360ms; }
+.hero__intro { animation-delay: 430ms; }
+.countdown { animation-delay: 510ms; }
+.hero__date { animation-delay: 590ms; }
+.hero__actions { animation-delay: 670ms; }
+
+.hero__flowers {
+  animation: flowerFloat 8s ease-in-out 1.2s infinite;
+}
+
+@media (max-width: 800px) {
+  html {
+    scroll-padding-top: 76px;
+  }
+
+  [data-reveal="left"],
+  [data-reveal="right"] {
+    transform: translate3d(0, 24px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-reveal],
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero__frame,
+  .hero__kicker,
+  .hero__names,
+  .hero__announcement,
+  .hero__ornament,
+  .hero__intro,
+  .countdown,
+  .hero__date,
+  .hero__actions,
+  .hero__flowers {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}
